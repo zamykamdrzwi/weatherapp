@@ -1,5 +1,5 @@
 {
-  "name": "front-end2",
+  "name": "@zamykamdrzwi/front-end2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zamykamdrzwi/weatherapp.git"
+  },
   "devDependencies": {
     "sass": "^1.69.2"
   }
