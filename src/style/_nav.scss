@@ -1,0 +1,77 @@
+@use './variables' as *;
+@use './GRID' as *;
+
+.nav{
+    display: grid;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    grid-template-columns: 1fr 4fr;
+    background-color: $primary-color;
+    &_img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &_i{
+            width: 185px;
+            display: flex;
+        }
+    }
+    &_container{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    &_ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin-right: 66px;
+        &_link{
+            display: flex;
+            text-decoration: none;
+            color: $secondary-color;
+            margin-left: 30px;
+            font-size: 18px;
+        }
+    }
+    &_rollMenuBtn{
+        display: flex;  
+        position: fixed;
+        width: 35px;
+        top: 15px;
+    }
+}
+
+.navRoll_container{
+    display: flex;
+    position: fixed;
+    top: 64px;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-color;
+    justify-content: center;
+}
+.navRoll_ul{
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    color: $secondary-color;
+    align-items: center;
+}
+
+@media(max-width: 899px){
+    .nav{
+        &_ul{
+            &_link{
+                margin-left: 0px;
+                margin-top: 40px;
+                font-size: 19px;
+            }
+        }   
+        &_rollMenuBtn{
+            right: 10px;
+        }
+    }
+}

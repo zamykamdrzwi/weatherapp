@@ -1,0 +1,110 @@
+@use './variables' as *;
+@use './GRID' as *;
+
+.footer{
+    color: $primary-color;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+    "empty info";
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 10%;
+    background-color: $secondary-color;
+    &_info{
+        grid-area: info;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "box1"
+        "box2";
+        &_box1{
+            margin-bottom: 6px;
+            grid-area: box1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            &_logo{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                &_img{
+                    width: 185px;
+                }
+            }
+            &_mail{
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                flex-direction: column;
+            }
+        }
+        &_box2{
+            grid-area: box2;
+            padding-top: 6px;
+            border-top: 1px solid $bonus-color;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            &_tech{
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                &_img{
+                    display: flex;
+                    justify-content: space-between;
+                    &_html{
+                        height: 30px;
+                    }
+                    &_css{
+                        height: 30px;
+                    }
+                    &_js{
+                        height: 30px;
+                    }
+                    &_sass{
+                        height: 30px;
+                    }
+                    &_node{
+                        height: 30px;
+                    }
+                    &_ajax{
+                        height: 30px;
+                    }
+                }
+            }
+            &_links{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                &_git{
+                    margin-left: 5%;
+                    height: 30px;
+                }
+                &_linkedin{
+                    margin-left: 5%;
+                    height: 30px;
+                }
+                &_fb{
+                    margin-left: 5%;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1000px){
+    .footer{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "info";
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media(max-width: 450px){
+    .footer_info_box2_tech{
+        &_img{
+            flex-wrap: wrap;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@use './variables' as *;
+@use './nav';
+@use './firstImg';
+@use './menu';
+@use './main';
+@use './footer';
+
+
+body{
+    margin: 0;
+    font-family: $primmary-font;
+}
+
+.bg-dark{
+    background-color: $primary-color;
+    color: $secondary-color;
+}

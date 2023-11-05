@@ -1,0 +1,220 @@
+@use './variables' as *;
+@use './GRID' as *;
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "empty box"
+    "empty box2";
+    margin-top: 30px;
+    &_box{
+        grid-area: box;
+        &_alert{
+            display: none;
+            grid-template-columns: 1fr 20px;
+            color: $secondary-color;
+            width: 50%;
+            height: auto;
+            background-color: $bonus-color;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding-left: 7px;
+            align-items: center;
+            &_text{
+                display: flex;
+                width: 100%;
+            }
+            &_btnDiv{
+                display: flex;
+                width: 100%;
+                justify-content: flex-end;
+            }
+            &_btnDiv_btn{
+                color: $secondary-color;
+                font-size: 17px;
+                display: flex;
+                align-items: center;
+                background-color: $bonus-color;
+                border: none;
+                margin-right: 7px;
+            }
+            &_btnDiv_btn:hover{
+                cursor: pointer;
+            }
+        }
+        &_date{
+            font-size: 14px;
+            color: $bonus-color;
+        }
+        &_place{
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        &_weatherImg{
+            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            &_img{
+                display: flex;
+                width: 50px;
+                height: 50px;
+            }
+        }
+        &_temp{
+            display: inline-block;
+            font-size: 34px;
+            position: relative;
+            bottom: 15px;
+            left: 5px;
+        }
+        &_info{
+            font-weight: 550;
+        }
+        &_moreInfo{
+            border-left: 1px solid $bonus-color;
+            padding-left: 18px;
+        }
+    }
+    &_box2{
+        display: grid;
+        grid-area: box2;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 15px;
+        &_hourForecast{
+            &_info{
+                font-size: 22px;
+            }
+            &_hour{
+                padding-top: 8px;
+                &_box{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    grid-template-areas: 
+                    "hourToShow temp img showMore"
+                    "rollMoreInfo rollMoreInfo rollMoreInfo rollMoreInfo";
+                    align-items: center;
+                    border-bottom: 1px solid $bonus-color;  
+                    &_hourToShow{
+                        grid-area: hourToShow;
+                        display: flex;
+                        justify-content: center;
+                        font-weight: 550;
+                    }
+                    &_img{
+                        grid-area: img;
+                        display: flex;
+                        justify-content: center;
+                        padding-left: 10px;
+                        width: 50px;
+                        height: 50px;
+                    }
+                    &_temp{
+                        grid-area: temp;
+                        display: flex;
+                        justify-content: center;
+                        font-weight: 550;
+                    }
+                    &_showMore{
+                        grid-area: showMore;
+                        display: flex;
+                        justify-content: flex-end;
+                        margin-right: 10px;
+                        &_link{
+                            color: black;
+                            text-decoration: none;
+                        }
+                    }
+                    &_rollMoreInfo{
+                        grid-area: rollMoreInfo;
+                        display: none;
+                        border-left: 1px solid $bonus-color;
+                        padding-left: 18px;
+                        
+                    }
+                }
+            }
+        }
+        &_dayForecast{
+            margin-left: 10px;
+            &_info{
+                font-size: 22px;
+            }
+            &_day{
+                padding-top: 8px;
+                &_box{
+                    display: grid;
+                    grid-template-columns: 1.5fr 1fr 1fr 0.5fr;
+                    grid-template-areas: 
+                    "date tempMinMax img showMore";
+                    align-items: center;
+                    border-bottom: 1px solid $bonus-color;  
+                    &_date{
+                        grid-area: date;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-weight: 550;
+                    }
+                    &_tempMinMax{
+                        grid-area: tempMinMax;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-weight: 550;
+                    }
+                    &_img{
+                        grid-area: img;
+                        display: flex;
+                        justify-content: center;
+                        padding-left: 10px;
+                        width: 50px;
+                        height: 50px;
+                    }
+                    &_showMore{
+                        grid-area: showMore;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        &_link{
+                            color: black;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.box_light:hover{
+    display: grid;
+    background-color: $secondary-color;
+}
+.box_dark:hover{
+    display: grid;
+    background-color: $bonus-color;
+}
+
+@media(max-width: 1000px){
+    .main{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "box"
+        "box2";
+        margin-left: 15px;
+    }
+}
+
+@media(max-width: 450px){
+    .main{
+        &_box2{
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr;
+            &_dayForecast{
+                margin-left: 0px;
+                margin-top: 20px;
+            }
+        }
+    }
+}

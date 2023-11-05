@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.scss">
+</head>
+<body>
+    <nav class="nav">
+        <li class="nav_img"><a href=""><img alt="WeatherApp" src="../img/logo_yellow.png" class="nav_img_i"></a></li>
+        <div class="nav_container" id="navContainer">
+            <ul class="nav_ul" id="navUl">
+                <li><a class="nav_ul_link" id="navUlLink" href="">Wybierz język</a></li>
+                <li><a class="nav_ul_link" id="darkMode" href="">Tryb ciemny</a></li>
+                <li><a class="nav_ul_link" id="navUlLink" href="">Odświerz</a></li>
+                <li><a class="nav_ul_link" id="navUlLink" href="">Zaloguj się</a></li>
+                <li><a class="nav_ul_link" id="navUlLink" href="">Zarejestruj się</a></li>
+            </ul>  
+        </div>
+        <a href=""><img alt="menu" src="../img/roll_menu2.png" class="nav_rollMenuBtn" id="nav_rollMenuBtnId"></a>
+    </nav>
+    <div class="firstImg">
+        <div class="firstImg_text">
+            <div class="firstImg_text_1">WeatherApp</div><br>
+            <div class="firstImg_text_2">Sprawdź aktualną pogodę w swojej miejscowości!</div>
+        </div>
+        <picture>
+            <source media="(max-width: 700px)" srcset="../img/tlo_finall_min2.png" class="firstImg_img">
+            <source media="(max-width: 900px)" srcset="../img/tlo_finall_mid.png" class="firstImg_img">
+            <source media="(max-width: 1300px)" srcset="../img/tlo_finall_max.png" class="firstImg_img">
+            <img alt="tu powinien być obrazek" src="../img/tlo_finall3.png" class="firstImg_img">
+        </picture> 
+    </div>
+    <div class="menu">
+            <div class="menu_search">
+                <input type="text" class="menu_search_input" placeholder="Wyszukaj miasto" id="cityInput">
+                <input type="hidden" name="action" value="cityName">
+                <input type="submit" class="menu_search_button" value="Szukaj" id="takeData">
+            </div>
+        <div class="menu_link">
+            <a class="menu_link_a" href="">Wyszukaj po szerokściach geograficznych</a>
+            <button class="menu_link_btn">°C</button>
+        </div>
+    </div>
+    <main class="main">
+        <div class="main_box">
+            <div class="main_box_alert">
+                <div class="main_box_alert_text"></div>
+                <div class="main_box_alert_btnDiv"><button class="main_box_alert_btnDiv_btn">x</button></div>
+            </div>
+            <div id="time" class="main_box_date"></div>
+            <div class="main_box_place"></div>
+            <div class="main_box_weatherImg">
+                <img alt="tu powinien być obrazek" class="main_weatherImg_img" src="../img/weather.png">
+            </div>
+            <div class="main_box_temp"></div>
+            <div class="main_box_info"></div>
+            <div class="main_box_moreInfo">
+                <div class="main_box_moreInfo_wind"></div>
+                <div class="main_box_moreInfo_pressure"></div>
+                <div class="main_box_moreInfo_hum"></div>
+                <div class="main_box_moreInfo_vis"></div>
+                <div class="main_box_moreInfo_clouds"></div>
+                <div class="main_box_moreInfo_rain"></div>
+                <div class="main_box_moreInfo_snow"></div>
+            </div>
+            <!-- <div class="main_box_map"></div> -->
+        </div>
+        <div class="main_box2">
+            <div class="main_box2_hourForecast">
+                <div class="main_box2_hourForecast_info"></div>
+                <div class="main_box2_hourForecast_hour"></div>
+            </div>
+            <div class="main_box2_dayForecast">
+                <div class="main_box2_dayForecast_info">Prognoza na 5 dni:</div>
+                <div class="main_box2_dayForecast_day"></div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer_info">
+            <div class="footer_info_box1">
+                <div class="footer_info_box1_logo">
+                    <a href=""><img alt="WeatherApp" src="../img/logo_black.png" class="footer_info_box1_logo_img"></a>
+                </div>
+                <div class="footer_info_box1_mail">
+                    <div class="footer_info_box1_mail_text">Adres email:</div>
+                    <div class="footer_info_box1_mail_emial">rafdaw1337@wp.pl</div>
+                </div>
+            </div>
+            <div class="footer_info_box2">
+                <div class="footer_info_box2_tech">
+                    <div class="footer_info_box2_tech_info">Strona została utworzona przy urzyciu: </div>
+                    <div class="footer_info_box2_tech_img">
+                        <img src="../img/html-5.png" class="footer_info_box2_tech_img_html" alt="HTML">
+                        <img src="../img/css-3.png" class="footer_info_box2_tech_img_css" alt="CSS">
+                        <img src="../img/js_logo.png" class="footer_info_box2_tech_img_js" alt="JS">
+                        <img src="../img/sass.png" class="footer_info_box2_tech_img_sass" alt="sass">
+                        <img src="../img/node_js.png" class="footer_info_box2_tech_img_node" alt="nodeJs">
+                        <img src="../img/AJAX.png" class="footer_info_box2_tech_img_ajax" alt="AJAX">
+                    </div>
+                </div>
+                <div class="footer_info_box2_links">
+                    <img src="../img/github-logo/github-mark/github-mark.png" class="footer_info_box2_links_git" alt="GitHub">
+                    <img src="../img/linkedin.png" class="footer_info_box2_links_linkedin" alt="LinkedIn">
+                    <img src="../img/facebook.png" class="footer_info_box2_links_fb" alt="FaceBook">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
