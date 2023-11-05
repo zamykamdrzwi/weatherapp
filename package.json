@@ -11,11 +11,11 @@
   "author": "",
   "license": "ISC",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@zamykamdrzwi:registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zamykamdrzwi/weatherapp.git"
+    "url": "git+https://github.com/zamykamdrzwi/weatherapp.git"
   },
   "devDependencies": {
     "sass": "^1.69.2"
