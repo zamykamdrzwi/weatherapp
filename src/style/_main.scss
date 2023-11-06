@@ -208,6 +208,12 @@
 
 @media(max-width: 450px){
     .main{
+        margin-right: 15px;
+        &_box{
+            &_alert{
+                width: 98%;
+            }
+        }
         &_box2{
             grid-template-columns: 1fr;
             grid-template-rows: auto 1fr;
