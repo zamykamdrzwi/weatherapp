@@ -328,7 +328,7 @@ function callWeather(){
                 }
             }
             cityTime();
-            console.log(weather);
+            //console.log(weather);
         }else if(this.status == 404){
             let alert = document.querySelector('.main_box_alert');
             alert.style.display = 'grid';
@@ -364,7 +364,7 @@ function weatherForecast(city, targetId){
                 }else{
                     console.log('nie dziala');
                 }
-                console.log(secondDate);
+                //console.log(secondDate);
                 document.querySelector('.main_box2_hourForecast_info').innerHTML = `${currentDate}`;
             }else{
                 i = 0;
@@ -373,10 +373,10 @@ function weatherForecast(city, targetId){
             }     
             var dayFor = `${date0[8]}${date0[9]}`;
             var output = '';
-            console.log(forecast);
+            //console.log(forecast);
             var idTable = [];
             for(i; i<=forecast.list.length-1; i++){
-                console.log(i);
+                //console.log(i);
                 let dateI = '';
                 dateI += forecast.list[i].dt_txt;
                 let dayCheck = `${dateI[8]}${dateI[9]}`;
@@ -452,7 +452,7 @@ function weatherForecast(city, targetId){
 
 // Show more on every hour weather
 function linkStart(id){
-    console.log(id);
+    //console.log(id);
     for(let i=id[0]; i<=id[id.length-1]; i++){
         document.querySelector(`#id${i}`).addEventListener('click', showMoreHour);
     }  
