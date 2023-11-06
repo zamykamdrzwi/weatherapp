@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel ./src/index.html --port 1245",
-    "start_prod": "parcel build ./src/index.html"
+    "start_prod": "parcel build ./src/index.html",
+    "start_scss": "parcel build ./src/style/style.scss"
   },
   "keywords": [],
   "author": "",
@@ -19,8 +20,13 @@
     "url": "git+https://github.com/zamykamdrzwi/weatherapp.git"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.10.2",
     "cssnano": "^6.0.1",
     "postcss": "^8.4.31",
     "sass": "^1.69.2"
+  },
+  "extends": "@parcel/config-default",
+  "transforms": {
+    "sass": "@parcel/transformer-sass"
   }
 }
