@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel ./src/index.html",
     "start_prod": "parcel build ./src/index.html",
-    "start_scss": "parcel build ./src/style/style.scss"
+    "start_scss": "parcel build ./src/style/style.scss",
+    "build": "parcel build ./src/index.html"
   },
   "keywords": [],
   "author": "",
