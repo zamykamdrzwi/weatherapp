@@ -2,7 +2,7 @@
   "name": "@zamykamdrzwi/front-end2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel ./src/index.html --port 1245",
@@ -24,10 +24,10 @@
     "cssnano": "^6.0.1",
     "parcel-bundler": "^1.12.5",
     "postcss": "^8.4.31",
-    "sass": "^1.69.2"
+    "sass": "^1.69.5"
   },
   "extends": "@parcel/config-default",
   "transforms": {
-    "sass": "@parcel/transformer-sass"
+    "scss": "sass"
   }
 }
