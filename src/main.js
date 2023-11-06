@@ -166,7 +166,7 @@ function cityNow(){
 function callWeather(){
     var city = cityNow();
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${metricS}&APPID=${appiId}`, true);      
+    xhr.open('POST', `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${metricS}&APPID=${appiId}`, true);      
     xhr.onload = function(){
         if(this.status == 200){
             var weather = JSON.parse(this.responseText);
