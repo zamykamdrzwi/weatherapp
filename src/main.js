@@ -1,5 +1,3 @@
-// branch test
-
 // showTime
 // function showTime(){
 //     var currentTime  = new Date();
