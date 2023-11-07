@@ -204,6 +204,15 @@
     display: grid;
     background-color: $bonus-color;
 }
+.special{
+    background-color: yellow;
+    animation: getfocus 1s infinite;
+}
+@keyframes getfocus {
+    0% { background-color: $secondary-color; }
+    50% { background-color: #b1b1b1; }
+    100% { background-color: $secondary-color; }
+}
 
 @media(max-width: 1000px){
     .main{

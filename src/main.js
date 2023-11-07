@@ -609,6 +609,18 @@ function test(e){
     var targetId = newId[checkId];
     var city = cityNow();
     weatherForecast(city, targetId);
+    document.querySelector('#special').classList.add('special');
+    setTimeout(lostFocus, 1000);
+    let targetElement = document.querySelector('.main_box2');
+    if(targetElement && window.innerWidth < 449){
+        let scrollOffset = -20;
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+        window.scrollBy(0, scrollOffset);
+    }
+}
+
+function lostFocus(){
+    document.querySelector('#special').classList.remove('special');
 }
 
 // weather map
