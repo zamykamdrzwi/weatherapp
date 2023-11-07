@@ -423,11 +423,11 @@ function weatherForecast(city, targetId){
                     }
                 }
                 output +=
-                `<div class="main_box2_hourForecast_hour_box ${mode}">
+                `<div class="main_box2_hourForecast_hour_box ${mode}" id="id${i}">
                     <div class="main_box2_hourForecast_hour_box_hourToShow">${hourToShow}</div>
                     <div class="main_box2_hourForecast_hour_box_img"><img class="main_box2_hourForecast_hour_box_img_g" src="${img}"></div>
                     <div class="main_box2_hourForecast_hour_box_temp">${temp}</div>
-                    <div class="main_box2_hourForecast_hour_box_showMore"><a href="#" class="main_box2_hourForecast_hour_box_showMore_link" id="id${i}">...</a></div>
+                    <div class="main_box2_hourForecast_hour_box_showMore"><a href="#" class="main_box2_hourForecast_hour_box_showMore_link">...</a></div>
                     <div class="main_box2_hourForecast_hour_box_rollMoreInfo" id="idInfo${i}">
                         <div class="main_box2_hourForecast_hour_box_rollMoreInfo_wind">${wind}</div>
                         <div class="main_box2_hourForecast_hour_box_rollMoreInfo_press">${press}</div>
@@ -455,12 +455,21 @@ function linkStart(id){
     //console.log(id);
     for(let i=id[0]; i<=id[id.length-1]; i++){
         document.querySelector(`#id${i}`).addEventListener('click', showMoreHour);
-    }  
+    }
 }
 
 function showMoreHour(e){
     e.preventDefault();
-    var id = +e.target.id.substring(2,4);
+    let targetClass = e.target.classList.value;
+    if(targetClass === 'main_box2_hourForecast_hour_box_hourToShow' || targetClass === 'main_box2_hourForecast_hour_box_temp' || targetClass === 'main_box2_hourForecast_hour_box_showMore' || targetClass === 'main_box2_hourForecast_hour_box_img'){
+        var id = +e.target.parentNode.id.substring(2,4);
+    }
+    if(targetClass === 'main_box2_hourForecast_hour_box_img_g' || targetClass === 'main_box2_hourForecast_hour_box_showMore_link'){
+        var id = +e.target.parentNode.parentNode.id.substring(2,4);
+    }
+    if(targetClass === 'main_box2_hourForecast_hour_box box_light' || targetClass === 'main_box2_hourForecast_hour_box box_dark'){
+        var id = +e.target.id.substring(2,4);
+    }
     var hourBox = document.querySelector(`#idInfo${id}`);
     if(hourBox.style.display === 'grid'){
         hourBox.style.display = 'none';
@@ -549,13 +558,13 @@ function weatherDayForecast(city){
                     let tempMinMax = `${Math.floor(trueBox.main.temp_min)}${metricalTemp}/${Math.ceil(trueBox.main.temp_max)}${metricalTemp}`;
                     let img = `https://openweathermap.org/img/wn/${trueBox.weather[0].icon}@2x.png`;
                     output += 
-                    `<div class="main_box2_dayForecast_day_box ${mode}">
+                    `<div class="main_box2_dayForecast_day_box ${mode}" id="iid${i}">
                         <div class="main_box2_dayForecast_day_box_date">${date}</div>
                         <div class="main_box2_dayForecast_day_box_tempMinMax">${tempMinMax}</div>
                         <div class="main_box2_dayForecast_day_box_img">
                             <img class="main_box2_dayForecast_day_box_img_g" src="${img}">
                         </div>
-                        <div class="main_box2_dayForecast_day_box_showMore"><a href="#" class="main_box2_dayForecast_day_box_showMore_link" id="iid${i}">...</a></div>
+                        <div class="main_box2_dayForecast_day_box_showMore"><a href="#" class="main_box2_dayForecast_day_box_showMore_link">...</a></div>
                     </div>`;
                     }
                 document.querySelector('.main_box2_dayForecast_day').innerHTML = output;
@@ -584,7 +593,17 @@ function linkStart2(x){
 }
 function test(e){
     e.preventDefault();
-    var checkId = e.target.id.substring(3, 4);
+    let targetClass = e.target.classList.value;
+    if(targetClass === 'main_box2_dayForecast_day_box_date' || targetClass === 'main_box2_dayForecast_day_box_tempMinMax' || targetClass === 'main_box2_dayForecast_day_box_img' || targetClass === 'main_box2_dayForecast_day_box_showMore'){
+        var checkId = e.target.parentNode.id.substring(3, 4);
+    }
+    if(targetClass === 'main_box2_dayForecast_day_box_img_g' || targetClass === 'main_box2_dayForecast_day_box_showMore_link'){
+        var checkId = e.target.parentNode.parentNode.id.substring(3, 4);
+    }
+    if(targetClass === 'main_box2_dayForecast_day_box box_light' || targetClass === 'main_box2_dayForecast_day_box box_dark'){
+        var checkId = e.target.id.substring(3, 4);
+    }
+    console.log(checkId);
     var targetId = newId[checkId];
     var city = cityNow();
     weatherForecast(city, targetId);
