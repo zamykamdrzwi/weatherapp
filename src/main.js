@@ -560,6 +560,9 @@ function weatherDayForecast(city){
                     xSecondDate.push(id[i], date);
                     let tempMinMax = `${Math.floor(trueBox.main.temp_min)}${metricalTemp}/${Math.ceil(trueBox.main.temp_max)}${metricalTemp}`;
                     let img = `https://openweathermap.org/img/wn/${trueBox.weather[0].icon}@2x.png`;
+                    if(i === 0){
+                        date = 'Dzisiaj';
+                    }
                     output += 
                     `<div class="main_box2_dayForecast_day_box ${mode}" id="iid${i}">
                         <div class="main_box2_dayForecast_day_box_date">${date}</div>
