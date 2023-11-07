@@ -86,6 +86,9 @@
             &_info{
                 font-size: 22px;
             }
+            &_info:hover{
+                cursor: auto;
+            }
             &_hour{
                 padding-top: 8px;
                 &_box{
@@ -141,6 +144,9 @@
             &_info{
                 font-size: 22px;
             }
+            &_info:hover{
+                cursor: auto;
+            }
             &_day{
                 padding-top: 8px;
                 &_box{
@@ -185,6 +191,9 @@
                 }
             }
         }
+    }
+    &_box2:hover{
+        cursor: pointer;
     }
 }
 .box_light:hover{
