@@ -464,7 +464,9 @@ function showMoreHour(e){
     if(targetClass === 'main_box2_hourForecast_hour_box_hourToShow' || targetClass === 'main_box2_hourForecast_hour_box_temp' || targetClass === 'main_box2_hourForecast_hour_box_showMore' || targetClass === 'main_box2_hourForecast_hour_box_img'){
         var id = +e.target.parentNode.id.substring(2,4);
     }
-    if(targetClass === 'main_box2_hourForecast_hour_box_img_g' || targetClass === 'main_box2_hourForecast_hour_box_showMore_link'){
+    if(targetClass === 'main_box2_hourForecast_hour_box_img_g' || targetClass === 'main_box2_hourForecast_hour_box_showMore_link' || targetClass === 'main_box2_hourForecast_hour_box_rollMoreInfo_wind' || 
+    targetClass === 'main_box2_hourForecast_hour_box_rollMoreInfo_press' || targetClass === 'main_box2_hourForecast_hour_box_rollMoreInfo_hum' || targetClass === 'main_box2_hourForecast_hour_box_rollMoreInfo_vis' || 
+    targetClass === 'main_box2_hourForecast_hour_box_rollMoreInfo_clouds' || targetClass === 'main_box2_hourForecast_hour_box_rollMoreInfo_rain' || targetClass === 'main_box2_hourForecast_hour_box_rollMoreInfo_snow'){
         var id = +e.target.parentNode.parentNode.id.substring(2,4);
     }
     if(targetClass === 'main_box2_hourForecast_hour_box box_light' || targetClass === 'main_box2_hourForecast_hour_box box_dark'){
