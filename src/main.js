@@ -500,6 +500,7 @@ function weatherDayForecast(city){
                         date = tempDate;
                     }
                 }
+                id.unshift(0);
                 var output = '';
                 var xSecondDate = [];
                 for(let i=0; i<id.length; i++){
@@ -605,7 +606,6 @@ function test(e){
     if(targetClass === 'main_box2_dayForecast_day_box box_light' || targetClass === 'main_box2_dayForecast_day_box box_dark'){
         var checkId = e.target.id.substring(3, 4);
     }
-    console.log(checkId);
     var targetId = newId[checkId];
     var city = cityNow();
     weatherForecast(city, targetId);
