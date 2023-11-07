@@ -290,6 +290,9 @@ body {
 .main_box2_hourForecast_info {
   font-size: 22px;
 }
+.main_box2_hourForecast_info:hover {
+  cursor: auto;
+}
 .main_box2_hourForecast_hour {
   padding-top: 8px;
 }
@@ -327,20 +330,24 @@ body {
   margin-right: 10px;
 }
 .main_box2_hourForecast_hour_box_showMore_link {
-  color: black;
-  text-decoration: none;
+  width: 30px;
 }
 .main_box2_hourForecast_hour_box_rollMoreInfo {
   grid-area: rollMoreInfo;
   display: none;
   border-left: 1px solid #4995A6;
+  border-right: 1px solid #4995A6;
   padding-left: 18px;
+  padding-bottom: 7px;
 }
 .main_box2_dayForecast {
   margin-left: 10px;
 }
 .main_box2_dayForecast_info {
   font-size: 22px;
+}
+.main_box2_dayForecast_info:hover {
+  cursor: auto;
 }
 .main_box2_dayForecast_day {
   padding-top: 8px;
@@ -381,8 +388,10 @@ body {
   align-items: center;
 }
 .main_box2_dayForecast_day_box_showMore_link {
-  color: black;
-  text-decoration: none;
+  width: 30px;
+}
+.main_box2:hover {
+  cursor: pointer;
 }
 
 .box_light:hover {
@@ -395,6 +404,36 @@ body {
   background-color: #4995A6;
 }
 
+.special {
+  animation: getfocus 1s infinite;
+}
+
+.special-dark-mode {
+  animation: getfocus-dark-mode 1s infinite;
+}
+
+@keyframes getfocus {
+  0% {
+    background-color: #D9D9D9;
+  }
+  50% {
+    background-color: #b1b1b1;
+  }
+  100% {
+    background-color: white;
+  }
+}
+@keyframes getfocus-dark-mode {
+  0% {
+    background-color: #4995A6;
+  }
+  50% {
+    background-color: #008080;
+  }
+  100% {
+    background-color: #024059;
+  }
+}
 @media (max-width: 1000px) {
   .main {
     grid-template-columns: 1fr;
@@ -423,7 +462,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas: "empty info";
-  padding-top: 50px;
+  padding-top: 10px;
   padding-bottom: 50px;
   margin-top: 10%;
   background-color: #D9D9D9;

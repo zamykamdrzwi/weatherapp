@@ -627,7 +627,7 @@ function test(e){
     setTimeout(lostFocus, 1000);
     let targetElement = document.querySelector('.main_box2');
     if(targetElement && window.innerWidth < 449){
-        let scrollOffset = -20;
+        let scrollOffset = -65;
         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
         window.scrollBy(0, scrollOffset);
     }

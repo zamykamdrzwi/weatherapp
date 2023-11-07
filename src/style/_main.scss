@@ -132,7 +132,9 @@
                         grid-area: rollMoreInfo;
                         display: none;
                         border-left: 1px solid $bonus-color;
+                        border-right: 1px solid $bonus-color;
                         padding-left: 18px;
+                        padding-bottom: 7px;
                         
                     }
                 }
