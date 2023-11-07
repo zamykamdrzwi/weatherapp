@@ -125,8 +125,7 @@
                         justify-content: flex-end;
                         margin-right: 10px;
                         &_link{
-                            color: black;
-                            text-decoration: none;
+                            width: 30px;
                         }
                     }
                     &_rollMoreInfo{
@@ -184,8 +183,7 @@
                         justify-content: center;
                         align-items: center;
                         &_link{
-                            color: black;
-                            text-decoration: none;
+                            width: 30px;
                         }
                     }
                 }
@@ -205,13 +203,20 @@
     background-color: $bonus-color;
 }
 .special{
-    background-color: yellow;
     animation: getfocus 1s infinite;
+}
+.special-dark-mode{
+    animation: getfocus-dark-mode 1s infinite;
 }
 @keyframes getfocus {
     0% { background-color: $secondary-color; }
     50% { background-color: #b1b1b1; }
     100% { background-color: white; }
+}
+@keyframes getfocus-dark-mode {
+    0% { background-color: $bonus-color; }
+    50% { background-color: #008080; }
+    100% { background-color: $primary-color; }
 }
 
 @media(max-width: 1000px){

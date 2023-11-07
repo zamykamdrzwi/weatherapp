@@ -384,10 +384,13 @@ function weatherForecast(city, targetId){
                     break;
                 }
                 let mode = '';
+                let imgMode = '';
                 if(getCookie('darkMode')==='true'){
                     mode += 'box_dark';
+                    imgMode += 'rozwin-dark-mode.png';
                 }else{
                     mode += 'box_light';
+                    imgMode += 'rozwin.png';
                 }
                 let hourToShow = '';
                 let img = '';
@@ -427,7 +430,7 @@ function weatherForecast(city, targetId){
                     <div class="main_box2_hourForecast_hour_box_hourToShow">${hourToShow}</div>
                     <div class="main_box2_hourForecast_hour_box_img"><img class="main_box2_hourForecast_hour_box_img_g" src="${img}"></div>
                     <div class="main_box2_hourForecast_hour_box_temp">${temp}</div>
-                    <div class="main_box2_hourForecast_hour_box_showMore"><a href="#" class="main_box2_hourForecast_hour_box_showMore_link">...</a></div>
+                    <div class="main_box2_hourForecast_hour_box_showMore"><img src="${imgMode}" class="main_box2_hourForecast_hour_box_showMore_link"></div>
                     <div class="main_box2_hourForecast_hour_box_rollMoreInfo" id="idInfo${i}">
                         <div class="main_box2_hourForecast_hour_box_rollMoreInfo_wind">${wind}</div>
                         <div class="main_box2_hourForecast_hour_box_rollMoreInfo_press">${press}</div>
@@ -551,10 +554,13 @@ function weatherDayForecast(city){
                             break;
                     }
                     let mode = '';
+                    let imgMode = '';
                     if(getCookie('darkMode')==='true'){
                         mode += 'box_dark';
+                        imgMode += 'rozwin-dark-mode.png';
                     }else{
                         mode += 'box_light';
+                        imgMode += 'rozwin.png';
                     }
                     let date = `${showDay}, ${showMonth}`;
                     xSecondDate.push(id[i], date);
@@ -570,7 +576,7 @@ function weatherDayForecast(city){
                         <div class="main_box2_dayForecast_day_box_img">
                             <img class="main_box2_dayForecast_day_box_img_g" src="${img}">
                         </div>
-                        <div class="main_box2_dayForecast_day_box_showMore"><a href="#" class="main_box2_dayForecast_day_box_showMore_link">...</a></div>
+                        <div class="main_box2_dayForecast_day_box_showMore"><img src="${imgMode}" class="main_box2_dayForecast_day_box_showMore_link"></div>
                     </div>`;
                     }
                 document.querySelector('.main_box2_dayForecast_day').innerHTML = output;
@@ -612,7 +618,12 @@ function test(e){
     var targetId = newId[checkId];
     var city = cityNow();
     weatherForecast(city, targetId);
-    document.querySelector('#special').classList.add('special');
+    let special = document.querySelector('#special');
+    if(getCookie('darkMode')==='true'){
+        special.classList.add('special-dark-mode');
+    }else{
+        special.classList.add('special');
+    }
     setTimeout(lostFocus, 1000);
     let targetElement = document.querySelector('.main_box2');
     if(targetElement && window.innerWidth < 449){
@@ -623,8 +634,11 @@ function test(e){
 }
 
 function lostFocus(){
-    document.querySelector('#special').classList.remove('special');
+    let special = document.querySelector('#special');
+    special.classList.remove('special');
+    special.classList.remove('special-dark-mode');
 }
+
 
 // weather map
 // function weatherMap(){
