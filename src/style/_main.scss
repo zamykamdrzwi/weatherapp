@@ -211,7 +211,7 @@
 @keyframes getfocus {
     0% { background-color: $secondary-color; }
     50% { background-color: #b1b1b1; }
-    100% { background-color: $secondary-color; }
+    100% { background-color: white; }
 }
 
 @media(max-width: 1000px){
