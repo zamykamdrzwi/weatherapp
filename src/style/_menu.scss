@@ -77,16 +77,20 @@
 
 .active_c{
     background: linear-gradient(to right, $bonus-color, white);
+    transition: 0.1s;
 }
 .active_f{
     background: linear-gradient(to left, $bonus-color, white);
+    transition: 0.1s;
 }
 .color{
     color: $secondary-color;
     background-color: $bonus-color;
+    transition: 0.1s;
 }
 .disactive_color{
     background-color: white;
+    transition: 0.1s;
 }
 
 @media(max-width: 1000px){

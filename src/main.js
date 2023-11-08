@@ -63,6 +63,10 @@ function darkMode(e){
         document.querySelector('body').classList.add('bg-dark');
         darkModeBtn.innerHTML = 'tryb jasny';
     }
+    if(window.innerWidth < 900){
+        rollMenuActive = true;
+        rollMenu();
+    }
     let city = cityNow();
     weatherForecast(city);
 }
@@ -82,6 +86,7 @@ var navUlLink = document.getElementsByClassName('nav_ul_link');
 var nav = document.querySelector('.nav');
 window.addEventListener('resize', rollMenuBtn);
 navRollMenuBtn.addEventListener('click', rollMenuClick);
+
 var rollMenuActive = false;
 
 function rollMenuBtn(){
@@ -123,6 +128,13 @@ function rollMenu(){
         navUl.classList.add('nav_ul');
     }
 }
+
+navContainer.addEventListener('click', ()=>{
+    if(rollMenuActive === true){
+        rollMenuActive === true;
+        rollMenu();
+    }  
+});
 
 // Weather API current weather
 const appiId = '19de70c141fa4749dd0305edb2cd82a9';
@@ -641,7 +653,7 @@ function test(e){
     let targetElement = document.querySelector('.main_box2');
     if(targetElement && window.innerWidth < 449){
         let scrollOffset = -65;
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
         window.scrollBy(0, scrollOffset);
     }
 }
