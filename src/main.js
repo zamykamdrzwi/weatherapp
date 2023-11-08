@@ -141,16 +141,29 @@ var cityGlobal = document.querySelector('#cityInput').value;
 var superDate = '';
 
 function metricSys(){
+    var btn = document.querySelector('.menu_link_btn');
+    var btnBoxC = document.querySelector('.menu_link_btn_box_c');
+    var btnBoxF = document.querySelector('.menu_link_btn_box_f');
     if(metricS === 'metric'){
         metricS = 'imperial';
         metricalTemp = '°F';
         metricalSpeed = 'mph';
-        document.querySelector('.menu_link_btn').innerHTML = '°F';
+        btn.classList.add('active_f');
+        btn.classList.remove('active_c');
+        btnBoxF.classList.add('color');
+        btnBoxC.classList.remove('color');
+        btnBoxC.classList.add('disactive_color');
+        btnBoxF.classList.remove('disactive_color');
     }else if(metricS === 'imperial'){
         metricS = 'metric';
         metricalTemp = '°C';
         metricalSpeed = 'm/s';
-        document.querySelector('.menu_link_btn').innerHTML = '°C';
+        btn.classList.add('active_c');
+        btn.classList.remove('active_f');
+        btnBoxC.classList.add('color');
+        btnBoxF.classList.remove('color');
+        btnBoxF.classList.add('disactive_color');
+        btnBoxC.classList.remove('disactive_color');
     }
     callWeather();
 }
