@@ -30,5 +30,8 @@
   "extends": "@parcel/config-default",
   "transforms": {
     "scss": "sass"
+  },
+  "dependencies": {
+    "smooth-scroll": "^16.1.3"
   }
 }

@@ -21,6 +21,8 @@
 // }
 // setInterval(showTime, 1000);
 
+import SmoothScroll from "smooth-scroll";
+
 // cookies
 function setCookie(name, value, exdays){
     let expires = '';
@@ -652,9 +654,17 @@ function test(e){
     setTimeout(lostFocus, 1000);
     let targetElement = document.querySelector('.main_box2');
     if(targetElement && window.innerWidth < 449){
-        let scrollOffset = -65;
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
-        window.scrollBy(0, scrollOffset);
+        //let scrollOffset = 0;
+        // targetElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+        // window.scrollBy(0, scrollOffset);
+        const scroll = new SmoothScroll;
+        scroll.animateScroll(targetElement, null, { 
+            behavior: 'smooth', 
+            block: 'start', 
+            inline: 'start',
+            offset: 65,
+        });
+        //window.scrollBy(0, scrollOffset);
     }
 }
 
