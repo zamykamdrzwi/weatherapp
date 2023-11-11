@@ -457,7 +457,7 @@ function weatherForecast(city, targetId){
                     <div class="main_box2_hourForecast_hour_box_hourToShow">${hourToShow}</div>
                     <div class="main_box2_hourForecast_hour_box_img"><img class="main_box2_hourForecast_hour_box_img_g" src="${img}"></div>
                     <div class="main_box2_hourForecast_hour_box_temp">${temp}</div>
-                    <div class="main_box2_hourForecast_hour_box_showMore"><img src="${imgMode}" class="main_box2_hourForecast_hour_box_showMore_link"></div>
+                    <div class="main_box2_hourForecast_hour_box_showMore"><img src="${imgMode}" id="imgid${i}" class="main_box2_hourForecast_hour_box_showMore_link"></div>
                     <div class="main_box2_hourForecast_hour_box_rollMoreInfo" id="idInfo${i}">
                         <div class="main_box2_hourForecast_hour_box_rollMoreInfo_wind">${wind}</div>
                         <div class="main_box2_hourForecast_hour_box_rollMoreInfo_press">${press}</div>
@@ -503,10 +503,21 @@ function showMoreHour(e){
         var id = +e.target.id.substring(2,4);
     }
     var hourBox = document.querySelector(`#idInfo${id}`);
+    var showMoreBtn = document.querySelector(`#imgid${id}`);
     if(hourBox.style.display === 'grid'){
         hourBox.style.display = 'none';
+        if(getCookie('darkMode')==='true'){
+            showMoreBtn.src = 'rozwin-dark-mode.png';
+        }else{
+            showMoreBtn.src = 'rozwin.png';
+        }
     }else{
         hourBox.style.display = 'grid';
+        if(getCookie('darkMode')==='true'){
+            showMoreBtn.src = 'rozwin-dark-mode_down.png';
+        }else{
+            showMoreBtn.src = 'rozwin_down.png';
+        }
     }
 }
 
@@ -630,6 +641,7 @@ function linkStart2(x){
         document.querySelector(`#iid${i}`).addEventListener('click', test);
     }
 }
+
 function test(e){
     e.preventDefault();
     let targetClass = e.target.classList.value;
